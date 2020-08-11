@@ -13,7 +13,7 @@ void MainMenu::print() const {
     cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
 }
 
-const bool MainMenu::input() const {
+const bool MainMenu::input(Network& net) const {
     string line;
     getline(cin, line);
     if (line.size() > 1) {
@@ -25,9 +25,11 @@ const bool MainMenu::input() const {
             case '1': {
                 cout << endl;
                 cout << "         Add a node to the network          \n";
-                cout << "Please enter your valid base10 public key: ";
-                int publicKey;
-                cin >> publicKey;
+                cout << "Please enter your valid base10 public key pair: ";
+                pair < int, int > publicKey;
+                cin >> publicKey.first >> publicKey.second;
+                getline(cin, line); //Ignore rest of the line input and make a fresh line for input buffer
+                net.addANode(publicKey);
             } break;
             case '7': {
                 cout << endl;

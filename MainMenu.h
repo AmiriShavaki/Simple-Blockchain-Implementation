@@ -4,8 +4,8 @@
 
 #include <iostream>
 #include <string>
-
-#include "RSA.h"
+#include "Network.h"
+#include <utility> //Using pair
 
 using namespace std;
 
@@ -13,7 +13,7 @@ class MainMenu {
 public:
     MainMenu(){}
     void print() const;
-    const bool input() const;
+    const bool input(Network& net) const;
 };
 
 #endif
