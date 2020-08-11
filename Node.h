@@ -15,6 +15,7 @@ public:
     //We will copy the whole chain from the oldest node in the network
     Node(pair < int, int > publicKey, Node* firstNode):publicKey(publicKey){ copyChain(firstNode); }
     const Chain getBlockchain() const { return blockchain; }
+    const pair < int, int > getPublicKey() const { return publicKey; }
 private:
     pair < int, int > publicKey;
     Chain blockchain;
