@@ -28,8 +28,26 @@ const bool MainMenu::input(Network& net) const {
                 cout << "Please enter your valid base10 public key pair: ";
                 pair < int, int > publicKey;
                 cin >> publicKey.first >> publicKey.second;
+
+                cout << "Please encrypt below numbers with your private key and enter result to ensure us entered public key is yours\n";
+                vector < int > r(3);
+                r[0] = rng.go(1, publicKey.second - 1);
+                r[1] = rng.go(1, publicKey.second - 1);
+                r[2] = rng.go(1, publicKey.second - 1);
+                cout << r[0] << ' ' << r[1] << ' ' << r[2] << '\n';
+
+                cout << "Enter result of encryption: ";
+                vector < int > res(3);
+                cin >> res[0] >> res[1] >> res[2];
+
                 getline(cin, line); //Ignore rest of the line input and make a fresh line for input buffer
-                net.addANode(publicKey);
+
+                if (RSA::go(publicKey.first, publicKey.second, res) != r) {
+                    cout << "There is a problem with your encryption or your private key\n";
+                } else {
+                    net.addANode(publicKey);
+                    cout << "Successfully added!\n\n";
+                }
             } break;
             case '7': {
                 cout << endl;

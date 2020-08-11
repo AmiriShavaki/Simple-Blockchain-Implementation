@@ -6,6 +6,8 @@
 #include <string>
 #include "Network.h"
 #include <utility> //Using pair
+#include "RSA.h"
+#include "random.h"
 
 using namespace std;
 
@@ -14,6 +16,8 @@ public:
     MainMenu(){}
     void print() const;
     const bool input(Network& net) const;
+private:
+    Random rng; //Random number generator
 };
 
 #endif

@@ -4,15 +4,21 @@
 
 #include <string>
 #include <utility>
+#include "Chain.h"
 
 using namespace std;
 
 class Node {
 public:
     Node(){}
-    Node(pair < int, int > publicKey):publicKey(publicKey){}
+
+    //We will copy the whole chain from the oldest node in the network
+    Node(pair < int, int > publicKey, Node* firstNode):publicKey(publicKey){ copyChain(firstNode); }
+    const Chain getBlockchain() const { return blockchain; }
 private:
     pair < int, int > publicKey;
+    Chain blockchain;
+    void copyChain(Node* firstNode);
 };
 
 #endif

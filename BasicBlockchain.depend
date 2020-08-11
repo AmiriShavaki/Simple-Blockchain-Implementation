@@ -13,13 +13,15 @@
 	"MainMenu.h"
 	"Network.h"
 
-1597151247 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\mainmenu.h
+1597163976 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\mainmenu.h
 	<iostream>
 	<string>
 	"Network.h"
 	<utility>
+	"RSA.h"
+	"random.h"
 
-1597147068 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\mainmenu.cpp
+1597161400 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\mainmenu.cpp
 	"MainMenu.h"
 
 1597149255 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\rsa.h
@@ -36,21 +38,29 @@
 1597150217 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\chain.cpp
 	"Chain.h"
 
-1597150175 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\chain.h
+1597160696 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\chain.h
+	"Block.h"
+	<cstddef>
 
-1597151305 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.h
+1597161810 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.h
 	<vector>
 	"Node.h"
 	<string>
 	<utility>
 
-1597151335 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.h
+1597161195 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.h
 	<string>
 	<utility>
+	"Chain.h"
 
 1597150117 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.cpp
 	"Network.h"
 
-1597150481 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.cpp
+1597161157 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.cpp
 	"Node.h"
+
+1597162638 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\random.h
+	<cstdlib>
+	<ctime>
+	<cstddef>
 

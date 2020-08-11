@@ -13,7 +13,7 @@ class Network {
 private:
     vector < Node > nodes;
 public:
-    void addANode(pair < int, int > publicKey) { nodes.push_back(Node(publicKey)); }
+    void addANode(pair < int, int > publicKey) { nodes.push_back(Node(publicKey, (nodes.empty()?NULL:&nodes[0]))); }
 };
 
 #endif
