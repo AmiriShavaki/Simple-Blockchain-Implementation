@@ -4,6 +4,8 @@ int main() {
     MainMenu menu;
     while (true) {
         menu.print();
-        menu.input();
+        if (menu.input()) {
+            break;
+        }
     }
 }

@@ -22,8 +22,17 @@ const bool MainMenu::input() const {
         cout << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
     } else {
         switch (line[0]) {
-            case '1': { //Add a node to the network
-                cout << "Add a node to the network\n";
+            case '1': {
+                cout << endl;
+                cout << "         Add a node to the network          \n";
+                cout << "Please enter your valid base10 public key: ";
+                int publicKey;
+                cin >> publicKey;
+            } break;
+            case '7': {
+                cout << endl;
+                cout << "Program terminated successfully!\n";
+                return true; //It means mainloop should terminate the program
             } break;
             default: {
                 cout << "!!!!!!!!!!!!!!!!!!!!! Error !!!!!!!!!!!!!!!!!!!!!!!\n";
@@ -32,4 +41,5 @@ const bool MainMenu::input() const {
             }
         }
     }
+    return false; //It means mainloop should not terminate the program
 }
