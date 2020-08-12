@@ -51,6 +51,7 @@ const bool MainMenu::input(Network& net) const {
                     cout << "Successfully added!\n\n";
                 }
             } break;
+
             case '2': {
                 cout << endl;
                 cout << "         Remove a node from the network          \n";
@@ -80,11 +81,59 @@ const bool MainMenu::input(Network& net) const {
                     cout << "Successfully Removed!\n\n";
                 }
             } break;
+
+            case '3': {
+                cout << endl;
+                cout << "         Mine a block          \n";
+            } break;
+
+            case '4': {
+                cout << endl;
+                cout << "         Make a transaction          \n";
+
+                cout << "Please enter sender's valid base10 public key pair: ";
+                pair < int, int > publicKey1;
+                cin >> publicKey1.first >> publicKey1.second;
+
+                cout << "Please enter recipient's valid base10 public key pair: ";
+                pair < int, int > publicKey2;
+                cin >> publicKey2.first >> publicKey2.second;
+
+                cout << "Please enter amount: ";
+                int amount;
+                cin >> amount;
+
+                cout << "Please encrypt below numbers with sender's private key and enter result to ensure us entered public key is yours\n";
+                vector < int > r(3);
+                r[0] = rng.go(1, publicKey1.second - 1);
+                r[1] = rng.go(1, publicKey1.second - 1);
+                r[2] = rng.go(1, publicKey1.second - 1);
+                cout << r[0] << ' ' << r[1] << ' ' << r[2] << '\n';
+
+                cout << "Enter result of encryption: ";
+                vector < int > res(3);
+                cin >> res[0] >> res[1] >> res[2];
+
+                getline(cin, line); //Ignore rest of the line input and make a fresh line for input buffer
+
+                if (RSA::go(publicKey1.first, publicKey1.second, res) != r) {
+                    cout << "There is a problem with your encryption or sender's private key\n\n";
+                } else if (!net.findNode(publicKey1)) {
+                    cout << "There is not any stored node in the network with the given sender's public key\n\n";
+                } else if (!net.findNode(publicKey2)) {
+                    cout << "There is not any stored node in the network with the given recipient's public key\n\n";
+                } else {
+                    /////////////////
+                    cout << "Transaction successfully made!\n\n";
+                }
+            } break;
+
             case '7': {
                 cout << endl;
                 cout << "Program terminated successfully!\n";
                 return true; //It means mainloop should terminate the program
             } break;
+
             default: {
                 cout << "!!!!!!!!!!!!!!!!!!!!! Error !!!!!!!!!!!!!!!!!!!!!!!\n";
                 cout << "Plesae do not enter anything but a number between 1 to 7 in order to choose an option from Main Menu\n";
