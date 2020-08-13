@@ -21,7 +21,7 @@
 	"RSA.h"
 	"random.h"
 
-1597165699 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\mainmenu.cpp
+1597251957 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\mainmenu.cpp
 	"MainMenu.h"
 
 1597149255 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\rsa.h
@@ -42,21 +42,24 @@
 	"Block.h"
 	<cstddef>
 
-1597165402 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.h
+1597261015 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.h
 	<vector>
 	"Node.h"
 	<string>
 	<utility>
+	"transaction.h"
 
-1597165183 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.h
+1597261084 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.h
 	<string>
 	<utility>
 	"Chain.h"
+	<queue>
+	"transaction.h"
 
-1597165796 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.cpp
+1597261154 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.cpp
 	"Network.h"
 
-1597161157 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.cpp
+1597260978 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.cpp
 	"Node.h"
 
 1597162638 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\random.h
@@ -70,5 +73,6 @@
 1597248547 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\transaction.cpp
 	"transaction.h"
 
-1597248806 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\transaction.h
+1597251920 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\transaction.h
+	<utility>
 

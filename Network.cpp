@@ -20,3 +20,9 @@ void Network::removeNode(pair < int, int > publicKey) {
         }
     }
 }
+
+void Network::addTransaction(Transaction t) {
+    for (int i = 0; i < nodes.size(); i++) {
+            nodes[i].addToMemPool(t); //Each node in the network will have a copy of new transaction
+    }
+}

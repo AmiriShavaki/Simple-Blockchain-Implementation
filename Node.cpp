@@ -5,3 +5,7 @@ void Node::copyChain(Node* firstNode) {
         blockchain = firstNode -> getBlockchain();
     }
 }
+
+void Node::addToMemPool(Transaction t) {
+    transactionQ.push(t);
+}

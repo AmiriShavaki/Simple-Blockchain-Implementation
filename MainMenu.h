@@ -8,6 +8,7 @@
 #include <utility> //Using pair
 #include "RSA.h"
 #include "random.h"
+#include "StringUtility.h"
 
 using namespace std;
 

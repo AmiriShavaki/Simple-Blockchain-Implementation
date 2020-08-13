@@ -6,6 +6,7 @@
 #include "Node.h"
 #include <string>
 #include <utility>
+#include "transaction.h"
 
 using namespace std;
 
@@ -16,6 +17,7 @@ public:
     void addANode(pair < int, int > publicKey);
     const bool findNode(pair < int, int > publicKey) const;
     void removeNode(pair < int, int > publicKey);
+    void addTransaction(Transaction t);
 };
 
 #endif

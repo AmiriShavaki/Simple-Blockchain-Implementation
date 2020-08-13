@@ -16,4 +16,7 @@ int main() {
 
     vector < int > res = RSA::go(privateKey.first, privateKey.second, numbers);
     cout << "Result: " << res[0] << ' ' << res[1] << ' ' << res[2];
+
+    char junk;
+    cin >> junk; //Prevent terminal from close immediately
 }

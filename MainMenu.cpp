@@ -85,6 +85,15 @@ const bool MainMenu::input(Network& net) const {
             case '3': {
                 cout << endl;
                 cout << "         Mine a block          \n";
+
+                cout << "Please enter difficulty of minning the block: (or just press enter to set difficulty to 4 by default) ";
+                int difficulty;
+                getline(cin, line);
+                if (line.size() == 0) {
+                    difficulty = 4;
+                } else {
+                    difficulty = StringUtility::convertStringToNumber(line);
+                }
             } break;
 
             case '4': {
@@ -123,7 +132,7 @@ const bool MainMenu::input(Network& net) const {
                 } else if (!net.findNode(publicKey2)) {
                     cout << "There is not any stored node in the network with the given recipient's public key\n\n";
                 } else {
-                    /////////////////
+                    net.addTransaction(Transaction(publicKey1, publicKey2, amount));
                     cout << "Transaction successfully made!\n\n";
                 }
             } break;

@@ -5,6 +5,8 @@
 #include <string>
 #include <utility>
 #include "Chain.h"
+#include <queue>
+#include "transaction.h"
 
 using namespace std;
 
@@ -16,10 +18,12 @@ public:
     Node(pair < int, int > publicKey, Node* firstNode):publicKey(publicKey){ copyChain(firstNode); }
     const Chain getBlockchain() const { return blockchain; }
     const pair < int, int > getPublicKey() const { return publicKey; }
+    void addToMemPool(Transaction t);
 private:
     pair < int, int > publicKey;
     Chain blockchain;
     void copyChain(Node* firstNode);
+    queue < Transaction > transactionQ; //Memory pool
 };
 
 #endif
