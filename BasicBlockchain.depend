@@ -13,13 +13,14 @@
 	"MainMenu.h"
 	"Network.h"
 
-1597163976 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\mainmenu.h
+1597325741 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\mainmenu.h
 	<iostream>
 	<string>
 	"Network.h"
 	<utility>
 	"RSA.h"
 	"random.h"
+	"StringUtility.h"
 
 1597251957 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\mainmenu.cpp
 	"MainMenu.h"
@@ -75,4 +76,7 @@
 
 1597251920 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\transaction.h
 	<utility>
+
+1590404977 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\stringutility.h
+	<string>
 
