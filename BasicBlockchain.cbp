@@ -43,9 +43,12 @@
 		<Unit filename="Node.h" />
 		<Unit filename="RSA.cpp" />
 		<Unit filename="RSA.h" />
+		<Unit filename="StringUtility.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="random.cpp" />
 		<Unit filename="random.h" />
+		<Unit filename="sha256.cpp" />
+		<Unit filename="sha256.h" />
 		<Unit filename="transaction.cpp" />
 		<Unit filename="transaction.h" />
 		<Extensions>

@@ -22,11 +22,14 @@ public:
     Block();
     Block(string PrevHash, int index, int difficulty, vector < Transaction > transactions);
     const string getHash() const { return curBlockHash; }
+    const string getPrevHash() const { return PrevHash; }
     void setHash(string curHash){ curBlockHash = curHash; }
     const int getIndex() const { return index; }
     const int getNonce() const { return nonce; }
     const int getTimeStamp() const { return timeStamp; }
+    const int getDifficulty() const { return difficulty; }
     void setNonce(int nonce) { this -> nonce = nonce; }
+    vector < Transaction > getTransactions() const { return transactions; }
 };
 
 #endif

@@ -10,7 +10,7 @@
 #include <cstddef>
 #include "sha256.h"
 #include "StringUtility.h"
-#include <iostream> ///////////////////////////////////////////////////
+#include <iostream>
 
 using namespace std;
 
@@ -25,7 +25,8 @@ public:
     const Chain getBlockchain() const { return blockchain; }
     const pair < int, int > getPublicKey() const { return publicKey; }
     void addToMemPool(Transaction t);
-    void mine(int difficulty);
+    Block mine(int difficulty);
+    const bool verifyBlock(Block& newBlock) const;
 private:
     pair < int, int > publicKey;
     Chain blockchain;

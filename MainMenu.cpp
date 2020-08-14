@@ -118,7 +118,6 @@ const bool MainMenu::input(Network& net) const {
                     cout << "There is not any stored node in the network with the given public key\n\n";
                 } else {
                     net.mine(publicKey, difficulty);
-                    cout << "Successfully mined!\n\n";
                 }
 
             } break;

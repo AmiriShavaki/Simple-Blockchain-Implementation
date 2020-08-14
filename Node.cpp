@@ -10,7 +10,7 @@ void Node::addToMemPool(Transaction t) {
     transactionQ.push_back(t);
 }
 
-void Node::mine(int difficulty) {
+Block Node::mine(int difficulty) {
     string prevHash = (blockchain.getLastBlock() == NULL ? "" : blockchain.getLastBlock() -> getHash());
 
     vector < Transaction > transactions;
@@ -43,5 +43,23 @@ void Node::mine(int difficulty) {
         }
         output = sha256(input);
     }
-    cout << "output hash: " << output << "\n\n\n\n\n";
+    cout << "Block successfully mined by " << StringUtility::convertNumberToString(publicKey.first) << ' ' <<
+    StringUtility::convertNumberToString(publicKey.second) << "\nblock hash: " << output << "\n\n";
+
+    newBlock.setHash(output);
+    return newBlock;
+}
+
+const bool Node::verifyBlock(Block& newBlock) const {
+    string input; //Input of hash function
+    input += newBlock.getPrevHash();
+    input += StringUtility::convertNumberToString(newBlock.getIndex());
+    input += StringUtility::convertNumberToString(newBlock.getNonce());
+    input += StringUtility::convertNumberToString(newBlock.getTimeStamp());
+    input += StringUtility::convertNumberToString(newBlock.getDifficulty());
+    for (int i = 0; i < newBlock.getTransactions().size(); i++) {
+        input += newBlock.getTransactions()[i].getString();
+    }
+    string output = sha256(input);
+    return output == newBlock.getHash();
 }

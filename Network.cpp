@@ -30,7 +30,20 @@ void Network::addTransaction(Transaction t) {
 void Network::mine(pair < int, int > publicKey, int difficulty) {
     for (int i = 0; i < nodes.size(); i++) {
         if (nodes[i].getPublicKey() == publicKey) { //We found the miner node!
-            nodes[i].mine(difficulty);
+            Block newBock = nodes[i].mine(difficulty); //Mining process
+
+            int verifiedCount = 0; //Number of nodes verified the new block
+            for (int j = 0; j < nodes.size(); j++) { //Consensus
+                if (j != i) { //Every node except the miner of the block should verify hash of the block
+                    verifiedCount += nodes[j].verifyBlock(newBock);
+                }
+            }
+            cout << "Block verified by " << verifiedCount << " Nodes.\n";
+            if (verifiedCount >= (nodes.size() - 1) / 2) { //More than 50% of the nodes verified the block
+                cout << "Block verification successfully made!\n";
+            } else {
+                cout << "Block verification was unsuccessful\n";
+            }
         }
     }
 }

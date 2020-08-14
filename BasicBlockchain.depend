@@ -34,7 +34,7 @@
 1597409984 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\block.cpp
 	"Block.h"
 
-1597411070 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\block.h
+1597414294 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\block.h
 	<string>
 	<vector>
 	"Transaction.h"
@@ -47,14 +47,15 @@
 	"Block.h"
 	<cstddef>
 
-1597332313 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.h
+1597417410 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.h
 	<vector>
 	"Node.h"
 	<string>
 	<utility>
 	"transaction.h"
+	<iostream>
 
-1597412302 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.h
+1597414013 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.h
 	<string>
 	<utility>
 	"Chain.h"
@@ -65,10 +66,10 @@
 	"StringUtility.h"
 	<iostream>
 
-1597407992 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.cpp
+1597417738 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.cpp
 	"Network.h"
 
-1597409241 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.cpp
+1597417791 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.cpp
 	"Node.h"
 
 1597162638 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\random.h
