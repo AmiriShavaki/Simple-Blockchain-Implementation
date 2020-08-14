@@ -4,6 +4,8 @@
 
 #include "Block.h"
 #include <cstddef> //using NULL
+#include <iostream>
+#include <ctime>
 
 class Chain {
 private:
@@ -14,6 +16,9 @@ public:
     Chain():lastBlock(NULL), genesisBlock(NULL), len(0) {}
     const int getLen() const { return len; }
     Block* getLastBlock() { return lastBlock; }
+    void addBlock(Block newBlock);
+    void printBlock(int ind);
+    void printChain();
 };
 
 #endif

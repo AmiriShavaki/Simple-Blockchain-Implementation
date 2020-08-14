@@ -163,6 +163,29 @@ const bool MainMenu::input(Network& net) const {
                 }
             } break;
 
+            case '5': {
+                cout << endl;
+                cout << "         Show the whole chain          \n";
+
+                if (net.isEmpty()) {
+                    cout << "Unfortunately there is not any node in the network\n";
+                } else {
+                    net.getFirstNodePtr() -> getBlockchain() -> printChain();
+                }
+            } break;
+
+            case '6': {
+                cout << endl;
+                cout << "         Show block at a specific block index          \n";
+
+                cout << "Please enter index of the block you want to see: ";
+                int index;
+                cin >> index;
+                net.getFirstNodePtr() -> getBlockchain() -> printBlock(index);
+
+                getline(cin, line); //Ignore rest of the line
+            } break;
+
             case '7': {
                 cout << endl;
                 cout << "Program terminated successfully!\n";
@@ -173,7 +196,7 @@ const bool MainMenu::input(Network& net) const {
                 cout << "!!!!!!!!!!!!!!!!!!!!! Error !!!!!!!!!!!!!!!!!!!!!!!\n";
                 cout << "Plesae do not enter anything but a number between 1 to 7 in order to choose an option from Main Menu\n";
                 cout << "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n";
-            }
+            } break;
         }
     }
     return false; //It means mainloop should not terminate the program

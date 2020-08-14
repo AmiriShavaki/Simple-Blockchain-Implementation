@@ -22,11 +22,11 @@ public:
 
     //We will copy the whole chain from the oldest node in the network
     Node(pair < int, int > publicKey, Node* firstNode):publicKey(publicKey){ copyChain(firstNode); }
-    const Chain getBlockchain() const { return blockchain; }
+    Chain* getBlockchain() { return &blockchain; }
     const pair < int, int > getPublicKey() const { return publicKey; }
     void addToMemPool(Transaction t);
     Block mine(int difficulty);
-    const bool verifyBlock(Block& newBlock) const;
+    const bool verifyBlock(Block& newBlock);
 private:
     pair < int, int > publicKey;
     Chain blockchain;

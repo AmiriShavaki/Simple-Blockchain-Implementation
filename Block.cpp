@@ -1,7 +1,7 @@
 #include "Block.h"
 
 Block::Block(string PrevHash, int index, int difficulty, vector < Transaction > transactions):
-    PrevHash(PrevHash), index(index), difficulty(difficulty), transactions(transactions) {
+    PrevHash(PrevHash), index(index), difficulty(difficulty), transactions(transactions), prevPtr(NULL) {
 
     time(&timeStamp); //filling timeStamp
 

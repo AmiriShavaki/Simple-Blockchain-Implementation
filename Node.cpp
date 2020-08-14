@@ -2,7 +2,7 @@
 
 void Node::copyChain(Node* firstNode) {
     if (firstNode != NULL) {
-        blockchain = firstNode -> getBlockchain();
+        blockchain = *(firstNode -> getBlockchain());
     }
 }
 
@@ -46,11 +46,16 @@ Block Node::mine(int difficulty) {
     cout << "Block successfully mined by " << StringUtility::convertNumberToString(publicKey.first) << ' ' <<
     StringUtility::convertNumberToString(publicKey.second) << "\nblock hash: " << output << "\n\n";
 
+    //Erase transactions which are in mined block
+    for (int i = 0; i < newBlock.getTransactions().size(); i++) {
+        transactionQ.erase(transactionQ.begin());
+    }
+
     newBlock.setHash(output);
     return newBlock;
 }
 
-const bool Node::verifyBlock(Block& newBlock) const {
+const bool Node::verifyBlock(Block& newBlock) {
     string input; //Input of hash function
     input += newBlock.getPrevHash();
     input += StringUtility::convertNumberToString(newBlock.getIndex());
@@ -61,5 +66,15 @@ const bool Node::verifyBlock(Block& newBlock) const {
         input += newBlock.getTransactions()[i].getString();
     }
     string output = sha256(input);
-    return output == newBlock.getHash();
+    if (output == newBlock.getHash()) {
+
+        //Erase transactions which are in mined block
+        for (int i = 0; i < newBlock.getTransactions().size(); i++) {
+            transactionQ.erase(transactionQ.begin());
+        }
+
+        return true;
+    } else {
+        return false;
+    }
 }

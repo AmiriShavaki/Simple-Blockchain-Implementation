@@ -22,7 +22,7 @@
 	"random.h"
 	"StringUtility.h"
 
-1597332445 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\mainmenu.cpp
+1597429588 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\mainmenu.cpp
 	"MainMenu.h"
 
 1597149255 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\rsa.h
@@ -31,23 +31,25 @@
 1597161925 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\rsa.cpp
 	"RSA.h"
 
-1597409984 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\block.cpp
+1597423655 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\block.cpp
 	"Block.h"
 
-1597414294 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\block.h
+1597427620 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\block.h
 	<string>
 	<vector>
 	"Transaction.h"
 	<ctime>
 
-1597150217 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\chain.cpp
+1597429975 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\chain.cpp
 	"Chain.h"
 
-1597409129 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\chain.h
+1597427257 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\chain.h
 	"Block.h"
 	<cstddef>
+	<iostream>
+	<ctime>
 
-1597417410 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.h
+1597428449 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.h
 	<vector>
 	"Node.h"
 	<string>
@@ -55,7 +57,7 @@
 	"transaction.h"
 	<iostream>
 
-1597414013 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.h
+1597431523 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.h
 	<string>
 	<utility>
 	"Chain.h"
@@ -66,10 +68,10 @@
 	"StringUtility.h"
 	<iostream>
 
-1597417738 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.cpp
+1597420935 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\network.cpp
 	"Network.h"
 
-1597417791 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.cpp
+1597431518 source:c:\users\amiri\documents\blockchainlab\projects\basicblockchain\node.cpp
 	"Node.h"
 
 1597162638 c:\users\amiri\documents\blockchainlab\projects\basicblockchain\random.h

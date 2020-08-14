@@ -15,6 +15,8 @@ class Network {
 private:
     vector < Node > nodes;
 public:
+    const bool isEmpty() const { return nodes.empty(); }
+    Node* getFirstNodePtr() { return &nodes[0]; }
     void addANode(pair < int, int > publicKey);
     const bool findNode(pair < int, int > publicKey) const;
     void removeNode(pair < int, int > publicKey);
