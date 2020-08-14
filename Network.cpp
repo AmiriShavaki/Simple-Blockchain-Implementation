@@ -26,3 +26,11 @@ void Network::addTransaction(Transaction t) {
             nodes[i].addToMemPool(t); //Each node in the network will have a copy of new transaction
     }
 }
+
+void Network::mine(pair < int, int > publicKey, int difficulty) {
+    for (int i = 0; i < nodes.size(); i++) {
+        if (nodes[i].getPublicKey() == publicKey) { //We found the miner node!
+            nodes[i].mine(difficulty);
+        }
+    }
+}

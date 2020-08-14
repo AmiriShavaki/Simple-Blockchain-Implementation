@@ -9,3 +9,15 @@ private key: 29 91
 #3
 public key: 7 187
 private key: 23 187
+
+#4
+public key: 67 143
+private key: 43 143
+
+#5
+public key: 29 91
+private key: 5 91
+
+#6
+public key: 23 187
+private key: 7 187

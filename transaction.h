@@ -3,6 +3,7 @@
 #define TRANSACTION_H
 
 #include <utility>
+#include "StringUtility.h"
 
 using namespace std;
 
@@ -17,6 +18,7 @@ public:
     const int getAmount() const { return amount; }
     Transaction(){}
     Transaction(pair < int, int > sender, pair < int, int > recipient, int amount): sender(sender), recipient(recipient), amount(amount) {}
+    const string getString() const; //Return string representation of the transaction
 };
 
 #endif

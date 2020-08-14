@@ -12,8 +12,10 @@ class StringUtility {
     //Change type of given string to integer
     inline static int convertStringToNumber(string s);
 
-    //Determine all characters of given string are digit or not
-    inline static bool isAllDigit(string s);
+    inline static string convertNumberToString(int n);
+
+    //Determine all characters of given string are zero or not
+    inline static bool isAllZero(string s);
 
     //Determine all characters of given string are letter/space or not
     inline static bool isAllLetters(string s);
@@ -50,13 +52,22 @@ inline int StringUtility::convertStringToNumber(string s) {
     return ans;
 }
 
-inline bool StringUtility::isAllDigit(string s) {
+inline string StringUtility::convertNumberToString(int n) {
+    string res;
+    while (n) {
+        res = (char)('0' + n % 10) + res;
+        n /= 10;
+    }
+    return res;
+}
+
+inline bool StringUtility::isAllZero(string s) {
     for (int i = 0; i < s.size(); i++) {
-        if (s[i] < '0' || s[i] > '9') {
+        if (s[i] != '0') {
             return false;
         }
     }
-    return s.size();
+    return true;
 }
 
 inline bool StringUtility::isAllLetters(string s) {

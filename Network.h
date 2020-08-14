@@ -18,6 +18,7 @@ public:
     const bool findNode(pair < int, int > publicKey) const;
     void removeNode(pair < int, int > publicKey);
     void addTransaction(Transaction t);
+    void mine(pair < int, int > publicKey, int difficulty);
 };
 
 #endif

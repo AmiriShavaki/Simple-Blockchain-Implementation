@@ -9,8 +9,11 @@ class Chain {
 private:
     Block* lastBlock;
     Block* genesisBlock;
+    int len; //Length of the chain
 public:
-    Chain():lastBlock(NULL), genesisBlock(NULL) {}
+    Chain():lastBlock(NULL), genesisBlock(NULL), len(0) {}
+    const int getLen() const { return len; }
+    Block* getLastBlock() { return lastBlock; }
 };
 
 #endif

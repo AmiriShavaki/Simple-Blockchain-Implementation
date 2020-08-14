@@ -94,6 +94,33 @@ const bool MainMenu::input(Network& net) const {
                 } else {
                     difficulty = StringUtility::convertStringToNumber(line);
                 }
+
+                cout << "Please enter miner's valid base10 public key pair: ";
+                pair < int, int > publicKey;
+                cin >> publicKey.first >> publicKey.second;
+
+                cout << "Please encrypt below numbers with your private key and enter result to ensure us entered public key is yours\n";
+                vector < int > r(3);
+                r[0] = rng.go(1, publicKey.second - 1);
+                r[1] = rng.go(1, publicKey.second - 1);
+                r[2] = rng.go(1, publicKey.second - 1);
+                cout << r[0] << ' ' << r[1] << ' ' << r[2] << '\n';
+
+                cout << "Enter result of encryption: ";
+                vector < int > res(3);
+                cin >> res[0] >> res[1] >> res[2];
+
+                getline(cin, line); //Ignore rest of the line input and make a fresh line for input buffer
+
+                if (RSA::go(publicKey.first, publicKey.second, res) != r) {
+                    cout << "There is a problem with your encryption or your private key\n\n";
+                } else if (!net.findNode(publicKey)) {
+                    cout << "There is not any stored node in the network with the given public key\n\n";
+                } else {
+                    net.mine(publicKey, difficulty);
+                    cout << "Successfully mined!\n\n";
+                }
+
             } break;
 
             case '4': {
